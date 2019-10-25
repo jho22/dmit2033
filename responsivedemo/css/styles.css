@@ -1,0 +1,103 @@
+html {
+    box-sizing: border-box;
+}
+/*box-sizing keeps the default size of images, while auto adjusting padding, margin, border, etc*/
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    background: #284a5a;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2,
+h3 {
+    color: #284a5a;
+    font-size: 1.2em;
+    font-family: serif;
+}
+
+.main-content {
+    padding: 1em;
+}
+
+.col-group > div{
+    padding: 1em;
+}
+
+.main-content{
+    background: 
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.5)),
+        url(../img/bg-small.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+@media only screen and (min-width: 800px) {
+    .col-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col-group > div {
+        width: 50%;
+        /*width: 50% means the div's from col-group are separated into 2 colomns*/
+    }
+
+    .main-content{
+        background: 
+            linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.4)),
+            url(../img/bg-medium.jpg) no-repeat center center;
+        background-size: cover;
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .col-group > div {
+        width: 25%;
+        /*width: 25% means the div's from col-group are separated into 4 colomns*/
+    }
+
+    .main-content{
+        background: 
+            linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.4)),
+            url(../img/bg-large.jpg) no-repeat center center;
+        background-size: cover;
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    /*you can make the images auto resize to the max width of the boundary they are in by using max-width: 100%*/
+}
+
+/*
+1. media query
+2. fluid grid (flexbox and percentages)
+3. flexible images
+*/
